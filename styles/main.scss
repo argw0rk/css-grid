@@ -2,3 +2,19 @@
 @import './partials/base';
 
 // Class assignment code below this line
+
+.page-wrapper{
+    display: grid;
+    grid-template-rows: 50px 600px 150px;
+    
+}
+
+.featured-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+}
+.feature-one {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
