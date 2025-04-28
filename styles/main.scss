@@ -11,10 +11,24 @@
 
 .featured-items {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 10px;
+  
 }
 .feature-one {
     grid-column-start: 1;
+    grid-column-end: 3;
+}
+@media (min-width: 1024px) {
+    .page-wrapper{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+    
+.content-wrapper {
+grid-column-start: 1;
+grid-column-end: 2;
+
+}
+.content-area {
+    grid-column-start: 2;
     grid-column-end: 3;
 }
