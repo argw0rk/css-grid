@@ -3,32 +3,76 @@
 
 // Class assignment code below this line
 
-.page-wrapper{
+.body, html{
     display: grid;
-    grid-template-rows: 50px 600px 150px;
-    
+    justify-content: center;
+    height: 150%;
 }
 
-.featured-items {
+//first
+.navigation {
+    grid-area: header;
+}
+//L side bar
+.content-wrapper{
+    grid-area: sidebar;
+}
+
+
+//R side bar - content area
+.content-area{
+    grid-area: content;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start:3;
+    grid-column-end: 4;
+}
+
+//footer
+
+.footer{
+    grid-area: footer;
+}
+
+
+
+.page-wrapper {
     display: grid;
-  
+    grid-template-rows: 100px 1fr 75px 75px;
+    grid-template-columns: 200px 1fr;
+    grid-template-areas: "header header"
+                        "sidebar content"
+                        "footer footer";
+
+   
+   
 }
-.feature-one {
-    grid-column-start: 1;
-    grid-column-end: 3;
-}
+
+
 @media (min-width: 1024px) {
     .page-wrapper{
-        grid-template-columns: repeat(2,1fr);
+        width: 1000px;
+       grid-template-columns: repeat(200px, 1fr);
+        grid-template-rows: 70px 1fr 50px;
     }
 }
+.header, .footer, .featured-items {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-template-columns:1fr;
+}
     
-.content-wrapper {
-grid-column-start: 1;
-grid-column-end: 2;
+//dont delete
+.featured-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+    row-gap:10px;
+    grid-column-start: 1;
+    grid-column-end: 3;
 
 }
-.content-area {
-    grid-column-start: 2;
+.feature-one {  
+    grid-column-start: 1;
     grid-column-end: 3;
 }
